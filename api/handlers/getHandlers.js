@@ -16,3 +16,8 @@ exports.getParams = function (req, res) {
 	}
 };
 
+exports.anotherHandler = function (req, res) {
+
+	res.status(200).json({something:"completely different"});
+	
+};
