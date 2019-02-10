@@ -1,6 +1,7 @@
 ////////////////////////
 // Process arguments
 ////////////////////////
+var commander = require('commander');
 commander.option('-p, --port [port]', 'default [8081]')
          .parse(process.argv);
 //setup express
