@@ -13,19 +13,8 @@ app.use(bodyParser.json());
 app.set('port', Number(commander.port) || 8081);
 var path = require("path");
 //********** register API router **************************************
-var routes = require('./api/router'); 
-routes(app);
-//************Generic Error Handling*************************************
-app.use(function(req,res,next,err){
-    res.status(404);
-    res.sendFile(path.join(__dirname+'/views/404.html'));
-});
-app.use(function(req,res,next,err){
-    console.error(err.stack);
-    res.status(500);
-    res.sendFile(path.join(__dirname+'/views/500.html'));
-});
-
+var router= require('./api/router'); 
+router(app);
 //**************** Start listening ***********************************
 app.listen(app.get('port'), function(){
     console.log('Express started on port: ' + app.get('port') +

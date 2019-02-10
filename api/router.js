@@ -4,4 +4,5 @@ module.exports = function(app) {
   var getHandlers = require('./handlers/getHandlers');
   app.route('/entity/:pathParam').get(getHandlers.getParams);
   app.route('/somethingdifferent').get(getHandlers.anotherHandler);
+  
 };
